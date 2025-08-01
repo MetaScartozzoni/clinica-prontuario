@@ -1,6 +1,6 @@
 const CALENDLY_API_BASE_URL = 'https://api.calendly.com';
 // IMPORTANT: Replace with your actual Calendly Personal Access Token
-const CALENDLY_TOKEN = 'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzQ3NTg4MDgzLCJqdGkiOiJkOTVmZDNlNS1hMTJhLTRjMjQtOTNjYi05MDkxZDNkNGIwMTAiLCJ1c2VyX3V1aWQiOiJiMDI4MzFkMS1mZDMyLTQ2NmMtYjViOC1jM2RkNmViM2EzMDIifQ.B0qDZZKmta_Q2Tt7bG6RyA9owUqXa1Wf3yDhUU0xlRIxQT4kZD_i7BWpVkf1Xbzp0fnnCbZY28_We40M8Al9jA'; 
+const CALENDLY_TOKEN = import.meta.env.VITE_CALENDLY_TOKEN || 'YOUR_CALENDLY_TOKEN_HERE'; 
 
 /**
  * Fetches the current authenticated user's information from Calendly.
