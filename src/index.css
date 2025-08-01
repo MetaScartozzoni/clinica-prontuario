@@ -1,0 +1,146 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background-hsl: 248 68% 18%;
+    --foreground-hsl: 0 0% 98%;
+    
+    --card-hsl: 255 45% 25%;
+    --card-foreground-hsl: 0 0% 98%;
+    
+    --popover-hsl: 255 45% 20%;
+    --popover-foreground-hsl: 0 0% 98%;
+    
+    --primary-hsl: 267 92% 61%;
+    --primary-foreground-hsl: 0 0% 98%;
+    
+    --secondary-hsl: 354 89% 64%;
+    --secondary-foreground-hsl: 0 0% 98%;
+    
+    --muted-hsl: 255 45% 30%;
+    --muted-foreground-hsl: 240 5% 65%;
+    
+    --accent-hsl: 354 89% 64%;
+    --accent-foreground-hsl: 0 0% 98%;
+    
+    --destructive-hsl: 0 84% 60%;
+    --destructive-foreground-hsl: 0 0% 98%;
+    
+    --border-hsl: 267 92% 40%;
+    --input-bg-hsl: 255 45% 20%;
+    --input-border-hsl: 267 92% 40%;
+    --input-foreground-hsl: 0 0% 98%;
+    --input-placeholder-foreground-hsl: 240 4% 56%;
+    
+    --ring-hsl: 354 89% 70%;
+    
+    --title-highlight-hsl: 0 0% 98%;
+    
+    --select-content-bg-hsl: 255 45% 20%;
+    --select-content-foreground-hsl: 0 0% 98%;
+
+    --modal-dark-bg-hsl-values: 255 45% 15%;
+    --modal-dark-border-hsl-values: 267 92% 40%;
+    --modal-dark-foreground-hsl-values: 0 0% 95%;
+    --modal-dark-muted-foreground-hsl-values: 240 5% 65%;
+    --modal-dark-ring-hsl-values: 267 92% 61%;
+    --modal-dark-primary-hsl-values: 267 92% 61%;
+
+    --modal-light-input-bg-hsl-values: 240 10% 96%;
+    --modal-light-input-foreground-hsl: 240 10% 4%;
+    --modal-light-border-hsl: 240 6% 90%;
+    --modal-light-ring-hsl: 240 6% 60%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(120deg, #1B1446 0%, #472377 50%, #8C39F6 100%);
+    font-family: 'Inter', sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .btn-gradient {
+    background: linear-gradient(90deg, #A146D9 0%, #FF5D6C 100%);
+    @apply text-white font-bold hover:opacity-90 transition-opacity;
+  }
+  
+  .btn-frutacor {
+    background: linear-gradient(90deg, #8C39F6 0%, #FF5D6C 100%);
+    @apply text-white font-bold hover:opacity-90 transition-opacity;
+  }
+
+  .card-glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg;
+  }
+  
+  .page-title {
+    @apply text-3xl font-bold tracking-tight text-white;
+  }
+
+  .page-subtitle {
+    @apply text-lg text-violet-200;
+  }
+
+  .modal-dark-theme {
+    @apply bg-[hsl(var(--modal-dark-bg-hsl-values)/0.8)] border-[hsl(var(--modal-dark-border-hsl-values))] text-[hsl(var(--modal-dark-foreground-hsl-values))] backdrop-blur-lg;
+  }
+  .modal-dark-theme .dialog-title-custom {
+    @apply text-white;
+  }
+  .modal-dark-theme .dialog-description-custom {
+    @apply text-[hsl(var(--modal-dark-muted-foreground-hsl-values))];
+  }
+  .modal-dark-theme .label-custom {
+    @apply text-violet-200 font-medium;
+  }
+  .modal-dark-theme .input-light-theme,
+  .modal-dark-theme .select-trigger-custom,
+  .modal-dark-theme .textarea-light-theme {
+    @apply bg-[hsl(var(--modal-light-input-bg-hsl-values))] text-[hsl(var(--modal-light-input-foreground-hsl))] border-[hsl(var(--modal-light-border-hsl))] placeholder:text-muted-foreground/60 focus-visible:ring-[hsl(var(--modal-light-ring-hsl))];
+  }
+  .modal-dark-theme .select-content-custom {
+    @apply bg-[hsl(var(--modal-light-input-bg-hsl-values))] text-[hsl(var(--modal-light-input-foreground-hsl))];
+  }
+  .modal-dark-theme .select-item-custom {
+    @apply focus:bg-accent/20;
+  }
+  .modal-dark-theme .checkbox-custom {
+    @apply border-violet-300 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground;
+  }
+}
+
+.shimmer-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
+}

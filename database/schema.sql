@@ -1,0 +1,21 @@
+-- =====================================================================================
+-- Arquivo: schema.sql
+-- Descrição: Este é um arquivo mestre que pode ser usado para executar todos os scripts de criação em ordem.
+-- Cole o conteúdo de todos os arquivos de `01` a `10` aqui para uma execução única,
+-- ou execute cada arquivo individualmente no Supabase SQL Editor na ordem correta.
+--
+-- ORDEM DE EXECUÇÃO:
+-- 1. 01_types.sql
+-- 2. 02_core_tables.sql
+-- 3. 03_appointment_tables.sql
+-- 4. 04_communication_tables.sql
+-- 5. 05_permission_and_availability_tables.sql
+-- 6. 06_resource_management_tables.sql
+-- 7. 07_document_and_settings_tables.sql
+-- 8. functions.sql
+-- 9. policies.sql
+-- 10. triggers.sql
+-- =====================================================================================
+
+-- Para conveniência, este arquivo está vazio. Recomenda-se executar os scripts
+-- individualmente para melhor controle e depuração de erros durante a configuração inicial.
